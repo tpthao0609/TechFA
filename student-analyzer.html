@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1: Student Score Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .result-excellent { color: #04aa6d; font-weight: bold; }
+        .result-good { color: #2196f3; font-weight: bold; }
+        .result-pass { color: #ff9800; font-weight: bold; }
+        .result-fail { color: #f44336; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card">
+            <div class="card-body">
+                <a href="index.html" class="btn btn-outline-secondary mb-3">&larr; Quay lại menu</a>
+                <h2 class="card-title mb-4">Exercise 1: Student Score Analyzer</h2>
+                
+                <div class="bg-light p-4 rounded" id="result">
+                    <p>Click the button below to analyze student scores:</p>
+                    <button class="btn btn-success" onclick="analyzeStudents()">Analyze Students</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function analyzeStudents() {
+            // Store student data using arrays
+            const names = ["Nguyen Van A", "Tran Thi B", "Le Van C", "Pham Thi D", "Hoang Van E", "Vu Thi F"];
+            const ages = [20, 21, 19, 22, 20, 21];
+            const datesOfBirth = ["15/03/2004", "22/07/2003", "10/11/2005", "05/01/2002", "18/09/2004", "30/12/2003"];
+            const scores = [95, 78, 45, 88, 62, 35];
+
+            let resultHTML = "<h4 class='mb-3'>Student Results:</h4>";
+            let totalScore = 0;
+
+            // Loop through the array of scores
+            for (let i = 0; i < scores.length; i++) {
+                totalScore += scores[i];
+                
+                // Determine result based on score
+                let result = "";
+                let resultClass = "";
+                
+                if (scores[i] >= 90) {
+                    result = "Excellent";
+                    resultClass = "result-excellent";
+                } else if (scores[i] >= 70) {
+                    result = "Good";
+                    resultClass = "result-good";
+                } else if (scores[i] >= 50) {
+                    result = "Pass";
+                    resultClass = "result-pass";
+                } else {
+                    result = "Fail";
+                    resultClass = "result-fail";
+                }
+
+                // Print student information
+                resultHTML += `
+                    <div class="card mb-3 border-start border-4 border-success">
+                        <div class="card-body">
+                            <h5 class="card-title">Student ${i + 1}</h5>
+                            <p class="card-text mb-1"><strong>Name:</strong> ${names[i]}</p>
+                            <p class="card-text mb-1"><strong>Age:</strong> ${ages[i]}</p>
+                            <p class="card-text mb-1"><strong>Date of Birth:</strong> ${datesOfBirth[i]}</p>
+                            <p class="card-text mb-1"><strong>Score:</strong> ${scores[i]}</p>
+                            <p class="card-text"><strong>Result:</strong> <span class="${resultClass}">${result}</span></p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Calculate and print average score
+            const averageScore = totalScore / scores.length;
+            resultHTML += `
+                <div class="alert alert-info mt-3">
+                    <h5 class="alert-heading">Average Score: ${averageScore.toFixed(2)}</h5>
+                </div>
+            `;
+
+            document.getElementById("result").innerHTML = resultHTML;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

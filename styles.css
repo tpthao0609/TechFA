@@ -1,83 +1,10 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Custom CSS bổ sung cho Bootstrap */
 body {
-    font-family: sans-serif;
-    padding: 20px;
     background-color: #f5f5f5;
 }
-h2 { margin-bottom: 20px; }
-a { color: #007bff; text-decoration: none; }
-.back-btn { display: inline-block; margin-bottom: 15px; font-weight: bold; }
 
-/* Khung bọc ngoài mô phỏng ô vuông trắng trong đề */
-.layout-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Định dạng các ô xám bên trong */
-.box {
-    background-color: #eeeeee;
-    color: #555;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 15px 0;
-    border-radius: 4px;
-}
-
-/* Hệ thống hàng và cột dựa trên Flexbox */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px -5px;
-}
-.col {
-    padding: 0 5px;
-    margin-bottom: 10px;
-}
-
-/* Chia tỉ lệ Grid 12 cột */
-.col-2  { flex: 0 0 16.66%; max-width: 16.66%; }
-.col-3  { flex: 0 0 25%;    max-width: 25%; }
-.col-4  { flex: 0 0 33.33%; max-width: 33.33%; }
-.col-6  { flex: 0 0 50%;    max-width: 50%; }
-.col-7  { flex: 0 0 58.33%; max-width: 58.33%; }
-.col-8  { flex: 0 0 66.66%; max-width: 66.66%; }
-.col-9  { flex: 0 0 75%;    max-width: 75%; }
-.col-12 { flex: 0 0 100%;   max-width: 100%; }
-
-/* Helper cho chiều cao cột dọc */
-.h-100 { height: 100px; }
-.h-200 { height: 200px; }
-.h-300 { height: 300px; }
-.h-400 { height: 400px; }
-
-/* Style cho nút Try it Yourself màu xanh lá */
-.try-btn {
-    display: inline-block;
-    background-color: #04aa6d; /* Màu xanh chuẩn W3Schools */
-    color: white !important; /* Giữ chữ luôn màu trắng */
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.try-btn:hover {
-    background-color: #059862; /* Hiệu ứng đổi màu nhẹ khi di chuột vào */
-}
+/* Màu sắc cho kết quả Student Score Analyzer */
+.result-excellent { color: #04aa6d; font-weight: bold; }
+.result-good { color: #2196f3; font-weight: bold; }
+.result-pass { color: #ff9800; font-weight: bold; }
+.result-fail { color: #f44336; font-weight: bold; }
